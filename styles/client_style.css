@@ -1,0 +1,64 @@
+.client{
+	
+	position: absolute;
+	
+	
+	width: 450px;
+	height: 450px;
+	margin-left: 0px;
+	
+	
+	
+	
+}
+.fclient{
+	width: 450px;
+	height: 450px;
+	text-align:center;
+	padding-left:20px;
+	
+	
+	margin-left:460px;
+	margin-top:50px;
+	display: inline-block;
+	box-shadow:0 0 20px;
+	
+	
+}
+.profile{
+	width: 450px;
+	height: 450px;
+	text-align:center;
+	padding-left:20px;
+	
+	
+	margin-left:5px;
+	margin-top:20px;
+	box-shadow:0 0 20px;
+	
+	
+	
+}
+.payment{
+	width: 450px;
+	height: 450px;
+	text-align:center;
+	padding-left:20px;
+	
+	
+	margin-left:5px;
+	margin-top:20px;
+box-shadow:0 0 20px}
+.Schedule{
+	width: 250px;
+	height: 250px;
+	text-align:center;
+	padding-left:20px;
+	
+	
+	margin-left:5px;
+	margin-top:20px;
+box-shadow:0 0 20px;}
+	
+	
+	

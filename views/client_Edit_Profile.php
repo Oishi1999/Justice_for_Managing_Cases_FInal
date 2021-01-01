@@ -1,22 +1,25 @@
 <?php
-    include_once ("../Controllers/client_controller.php");
+       include_once"../controllers/client_Edit_profile_controller.php";
+
 ?>
-<html>
+
+<<html>
     <head>
-        <title>complainant Registration</title>
+        <title>Edit Profile</title>
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
     </head>
     <body>
+	    
+		<div class="Editprofile">
         <center>
-            <form  action="" method="POST" onsubmit="return registrationValidation();">
-                <table>
+		<form  action="" method="POST" onsubmit="return registrationValidation();">
+            <table>
                     <tr >
                         <td><img src="../assets/justicelogo.png"; width="380" height="480"></td>
 						
                         <td align="right" id="registration-box-style">
 						
-                            <center><h4 style="color:Green;">Register as complainant</h4></center>
+                            <center><h4 style="color:Green;">Edit - Profile</h4></center>
 							
                             <label for="profile">Profile Picture: </label><input type="file" name="reg_pp"  id="pp" accept="image/*"><span id="err_pp" style="color:red;">*<?php echo $err_reg_pp;?></span><br><br>
 							
@@ -40,7 +43,7 @@
                             
 							<input type="radio" name="reg_gender" id="gender_female" value="Female"> Female<span id="err_reg_gender" style="color:red;">*<?php echo $err_reg_gender;?></span><br><br>
                             
-							<label for ="address">Address: </label><input type="text" name="address" id="reg_address" placeholder="Address"><span id="err_reg_address" style="color:red;">*<?php echo $err_reg_address;?></span><br><br>
+							<label for ="address">Address: </label><input type="text" name="reg_address" id="reg_address" placeholder="Address"><span id="err_reg_address" style="color:red;">*<?php echo $err_reg_address;?></span><br><br>
 							
 							<label for ="city">City: </label><input type="text" name="city" id="reg_city" placeholder="City"><span id="err_reg_city" style="color:red;">*<?php echo $err_reg_city;?></span><br><br>
                             
@@ -48,14 +51,14 @@
                             
 							<label for ="zip/postal">Zip/Postal:<input type="text" name="zip" id="reg_zip" placeholder="postal/Zip-Code"><span id="err_reg_zip" style="color:red;">*<?php echo $err_reg_zip;?></span><br><br>
                             
-							<a href="../views/landing.php"><u>Already registered!go to login</u></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" class="button" name="reg_button"value="Register"><br><br>
+							<a href="../views/landing.php"><u>Already uptaded!go to login</u></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" class="button" name="reg_button"value="Uptade"><br><br>
                         </td>
 
                     </tr>
                 </table>
             </form>
         </center>
-		<script src="../scripts/client_validation.js"></script>
+		<script src="../scripts/client_Edit_Profile.hp"></script>
 		
     </body>
 </html>

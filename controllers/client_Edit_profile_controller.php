@@ -1,44 +1,29 @@
 <?php
     $reg_pp="";
     $err_reg_pp="";
-	
     $reg_fullname="";
     $err_reg_fullname="";
-	
     $reg_username="";
     $err_reg_username="";
-	
     $reg_email="";
     $err_reg_email="";
-	
     $reg_phone="";
     $err_reg_phone="";
-	
+    $reg_pass="";
+    $err_reg_pass="";
+    $reg_cpass="";
+    $err_reg_cpass="";
     $reg_pass="";
     $err_reg_pass="";
 	
-    $reg_cpass="";
-    $err_reg_cpass="";
-	
-    $reg_pass="";
-    $err_reg_pass="";
-	
-    $reg_cpass="";
-    $err_reg_cpass="";
+    
 	
     $reg_nid="";
     $err_reg_nid="";
-	
     $reg_dob="";
     $err_reg_dob="";
-	
     $reg_gender="";
     $err_reg_gender="";
-	
-	$reg_address="";
-	$err_reg_address="";
-	
-	
     $reg_city="";
     $err_reg_city="";
     $reg_state="";
@@ -46,9 +31,10 @@
     $reg_zip="";
     $err_reg_zip="";
     $hasError=false;
+	
     if(isset($_POST["reg_button"])){
         //PROFILE PIC VALIDATION
-        if(!isset($_POST["reg_pp"])){
+        if(empty($_POST["reg_pp"])){
             $err_reg_pp="Select a Profile Picture";
             $hasError=true;
         }
@@ -77,7 +63,7 @@
         }
         //EMAIL VALIDATION
         if(empty($_POST["reg_email"])){
-            $err_email="Email Required";
+            $err_reg_email="Email Required";
             $hasError=true;
         }
         elseif(strpos($_POST["reg_email"],"@") && strpos($_POST["reg_email"],".")){
@@ -128,14 +114,7 @@
             $err_reg_pass="Password must contain '#' or '?'.";
             $hasError=true;
         }
-        elseif(empty($_POST["reg_cpass"])){
-            $err_reg_cpass="Confirmed Password Required";
-            $hasError=true;
-        }
-        elseif(strcmp($_POST["reg_cpass"],$_POST["reg_pass"])!=0){
-            $err_reg_cpass="Password and Confirm Password must be same";
-            $hasError=true;
-        }
+        
         else{
             $reg_pass=htmlspecialchars($_POST["reg_pass"]);
         }
@@ -148,7 +127,7 @@
             $reg_nid=htmlspecialchars($_POST["reg_nid"]);
         }
         //DATE OF BIRTH VALIDATION
-        if(!isset($_POST["reg_dob"])){
+        if(empty($_POST["reg_dob"])){
             $err_reg_dob="Birthday Required";
             $hasError=true;
         }
@@ -156,11 +135,11 @@
             $reg_dob=$_POST["reg_dob"];
         }
         //GENDER VALIDATION
-         if(isset($_POST["gender"])){
-            $gender=$_POST["gender"];
+        if(isset($_POST["reg_gender"])){
+            $reg_gender=$_POST["reg_gender"];
         }
         else{
-            $err_gender="* Gender Required.";
+            $err_reg_gender="Gender Required";
             $hasError=true;
         }
         //ADDRESS VALIDATION
@@ -186,17 +165,7 @@
             $reg_state=htmlspecialchars($_POST["zip"]);
         }
         
+      }
 
-			//$xml = new DOMDocument("1.0");
-			//$xml->preserveWhiteSpace=false;
-			//$xml->formatOutput= true;
-			//$xml->loadXML($users->asXML());
 
-			//$file = fopen("../../xmldata/users.xml","w");
-			//fwrite($file,$xml->saveXML());
-      //if(isset($_POST["reg_button"])){
-    		//header("Location: ../../pages/confirm_reg.php");
-    	}
-      
-      
 ?>
