@@ -1,6 +1,8 @@
 <?php
     require_once '../controllers/landing_controller.php';
     require_once '../controllers/lawyer_controller.php';
+	require_once ('../controllers/client_controller.php');
+
 ?>
 <html>
     <head>
@@ -39,7 +41,8 @@
                                 <div class="card-body">
                                     <div class="btn-group-vertical">
                                         <a class="btn btn-info text-left" href="lawyer_registration.php"><i class="fas fa-gavel"></i> As Lawyer</a>
-                                        <a class="btn btn-info text-left" href=""><i class="fas fa-users"></i> As Complainant</a><!--ADD YOUR HYPERLINK-->
+
+                                     <a class="btn btn-info text-left" href="client_registration.php"><i class="fas fa-users"></i> As Complainant</a><!--ADD YOUR HYPERLINK-->
                                         <a class="btn btn-info text-left" href=""><i class="fas fa-balance-scale"></i> As Judge</a><!--ADD YOUR HYPERLINK-->
                                     </div>
                                 </div>

@@ -42,6 +42,7 @@
                 echo "</center></span>";
 			}
 			else{
+				//exit($user_id);
                 session_start();
                 $cookie_value=$user_id[0]["id"];
                 setcookie($cookie_name, $cookie_value, time()+1800, "/");
@@ -56,6 +57,7 @@
                 }
                 else{
                     //REDIRECT TO COMPLAINANT DASHBOARD
+					header("Location: client_information.php");
                 }
 			}
         }
