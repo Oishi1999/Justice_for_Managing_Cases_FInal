@@ -13,6 +13,7 @@
                 <table>
                     <tr >
                         <td><img src="../assets/justicelogo.png"; width="380" height="480"></td>
+						<div class="card border-success mb3 dropshadow">
 						
                         <td align="right" id="registration-box-style">
 						

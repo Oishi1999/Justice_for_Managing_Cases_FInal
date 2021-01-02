@@ -79,7 +79,7 @@ function registrationValidation(){
         username.focus();
         username.style.border="2px solid red";
     }
-    else if(username.value.length<8){
+    else if(username.value.length<5){
         hasError=true;
         err_username.innerHTML="* Username Must Be >=8 Characters.";
         username.focus();
@@ -122,7 +122,7 @@ function registrationValidation(){
     }
     else if(pass.value.length<8){
         hasError=true;
-        err_pass.innerHTML="* Password must be >=8 characters.";
+        err_pass.innerHTML="* Password must be >=5 characters.";
         pass.focus();
         pass.style.border="2px solid red";
     }
@@ -138,9 +138,9 @@ function registrationValidation(){
         pass.focus();
         pass.style.border="2px solid red";
     }
-    else if(pass.value.search("#")==-1 && pass.value.search("?")==-1){
+    else if(pass.value.search("#")==-1 && pass.value.search("!")==-1){
         hasError=true;
-        err_pass.innerHTML="* Password must contain '#' or '?'.";
+        err_pass.innerHTML="* Password must contain '#' or '!'.";
         pass.focus();
         pass.style.border="2px solid red";
     }

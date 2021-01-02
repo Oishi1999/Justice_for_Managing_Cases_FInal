@@ -1,13 +1,6 @@
 <?php
 
 ?>
-
-
-
-
-
-
-
 <html>
   <head>
   <title>Schedule</title>

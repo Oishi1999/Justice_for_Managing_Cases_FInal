@@ -1,4 +1,6 @@
 <?php
+require_once '..\controllers\client_Add_lawyer_controller.php';
+$lawyer=lawyerinfo();
 
 ?>
 <html>
@@ -21,35 +23,40 @@
 		 <table class="table">
   <thead>
     <tr>
-      <th scope="col">List No</th>
-      <th scope="col">Lawyer Name</th>
-      <th scope="col">Lawyer Fees</th>
-      <th scope="col">Lawyer Phone Number</th>
-	  <th scope="col">Lawyer mail address</th>
+      <th scope="col">Full_Name </th>
+      <th scope="col">User_Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">NID</th>
+	  <th scope="col">Gender</th>
+	   <th scope="col">Address</th>
+      <th scope="col">Phone_Number</th>
+	  <th scope="col">Catagory</th>
+	  	  <th scope="col">Action</th>
+	  
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Maria</td>
-      <td>5000</td>
-      <td>0178468933</td>
-	  <td>maria@gmail.com</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>jhons</td>
-      <td>7000</td>
-	  <td>0967834</td>
-      <td>jhons@gmail.com</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>jairin</td>
-      <td>3000</td>
-	  <td>096789</td>
-	  <td>jairin@gmail.com</td>
-    </tr>
+   <?php
+       
+      for($i=0 ;$i<count($lawyer);$i++){
+        echo "<tr>";
+        echo "<td>".$lawyer[$i]["Full_Name"]."</td>";
+        echo "<td>".$lawyer[$i]["User_Name"]."</td>";
+        echo "<td>".$lawyer[$i]["Email"]."</td>";
+        echo "<td>".$lawyer[$i]["NID"]."</td>";
+        echo "<td>".$lawyer[$i]["Phone_Number"]."</td>";
+        echo "<td>".$lawyer[$i]["Gender"]."</td>";
+		 echo "<td>".$lawyer[$i]["Address"]."</td>";
+        echo "<td>".$lawyer[$i]["Catagory"]."</td>";
+     echo "<td></td>";
+        echo '<td><a href="?parem=add&amp;id='.$lawyer[$i]["User_Name"].'" class="btn btn-primary">Add</td>';
+
+        echo "</tr>";
+
+      }
+
+      ?>
+    
   </tbody>
 </table>
 		 

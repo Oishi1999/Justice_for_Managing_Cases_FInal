@@ -58,7 +58,7 @@
                 </table>
             </form>
         </center>
-		<script src="../scripts/client_Edit_Profile.hp"></script>
+		<script src="../scripts/client_Edit_Profile.js"></script>
 		
     </body>
 </html>

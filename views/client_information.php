@@ -38,7 +38,6 @@
 					<tr>
 						<td colspan="2" align="right">
 						
-							
 							 <a href="client_schedule.php"> <input style ="width :200px;height:70px;margin-top:20px;"type ="button" class="btn btn-primary btn-lg" name ="" value ="schedule"></a>
 							 
 							  
@@ -52,6 +51,15 @@
 					<tr>
 						<td>
 						<a href="client_Add_lawyer.php"> <input style ="width :200px;height:70px;margin-top:20px;"type ="button" class="btn btn-primary btn-lg" name ="" value ="Add lawyer"></a>
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" align="right">
+						
+						<a href="client_About_Case.php"> <input style ="width :200px;height:70px;margin-top:20px;" type ="button" class="btn btn-primary btn-lg"name ="" value ="About Case"></a>
+						
+							 
 						</td>
 					</tr>
 					<tr>

@@ -16,9 +16,11 @@
     $reg_pass="";
     $err_reg_pass="";
 	
-    
+	$reg_address="";
+	$err_reg_address="";
 	
-    $reg_nid="";
+    
+	$reg_nid="";
     $err_reg_nid="";
     $reg_dob="";
     $err_reg_dob="";
@@ -143,28 +145,30 @@
             $hasError=true;
         }
         //ADDRESS VALIDATION
-        if(empty($_POST["city"])){
-            $err_reg_city="City Required";
+       if(empty($_POST["address"])){
+            $err_address="* Address Required.";
             $hasError=true;
         }
         else{
-            $reg_city=htmlspecialchars($_POST["city"]);
+            $address=htmlspecialchars($_POST["address"]);
         }
+		
+		//STATE VALIDATION
         if(empty($_POST["state"])){
-            $err_reg_state="state Required";
+            $err_state="* State Required.";
             $hasError=true;
         }
         else{
-            $reg_state=htmlspecialchars($_POST["state"]);
+            $state=htmlspecialchars($_POST["state"]);
         }
+        //ZIP VALIDATION
         if(empty($_POST["zip"])){
-            $err_reg_zip="Zip/Postal Code Required";
+            $err_zip="* Zip/Postal Code Required.";
             $hasError=true;
         }
         else{
-            $reg_state=htmlspecialchars($_POST["zip"]);
+            $zip=htmlspecialchars($_POST["zip"]);
         }
-        
       }
 
 

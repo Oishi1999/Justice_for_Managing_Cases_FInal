@@ -5,11 +5,17 @@
     $fullname="";
     $err_fullname="";
 	
-	$lawyer_name="";
-	$err_lawyer_name="";
+	
+    $ID="";
+    $err_ID="";
+	
+	
 	
     $email="";
     $err_email="";
+	
+	$due="";
+	$err_due="";
 	
     $phone="";
     $err_phone="";
@@ -17,26 +23,34 @@
 	$Account_Number="";
 	$err_Account_Number="";
 	
-	$Amount_No="";
-	$err_Amount_No="";
+	
+	
+	$balance="";
+	$err_balance="";
+	
+	$paid="";
+	$err_paid="";
+	
+	$due_date="";
+	$err_due_date="";
+	
+	$payment_date="";
+	$err_payment_date="";
+	
+	$payer_id="";
+	$err_payer_id="";
+	
+	$receiver_id="";
+	$err_receiver_id="";
 	
 	
 	
-    $gender="";
-    $err_gender="";
+   
 	
     $address="";
     $err_address="";
 	
-    $city="";
-    $err_city="";
-	
-    $state="";
-    $err_state="";
-	
-    $zip="";
-    $err_zip="";
-   
+  
     $hasError=false;
     if(isset($_POST["reg_button"])){
        
@@ -47,36 +61,92 @@
         }
         else{
             $fullname=htmlspecialchars($_POST["fullname"]);
+			
         }
 		
-		//lawyer_name VALIDATION
-        if(empty($_POST["fullname"])){
-            $err_fullname="* Full Name Required.";
+		//ID VALIDATION
+        if(empty($_POST["ID"])){
+            $err_phone="* ID Number Required.";
             $hasError=true;
         }
+        
         else{
-            $lawyer_name=htmlspecialchars($_POST["fullname"]);
+            $ID=$_POST["ID"];
         }
-       
-        //EMAIL VALIDATION
-        if(empty($_POST["email"])){
-            $err_email="* Email Required.";
+		
+		//Due VALIDATION
+        if(empty($_POST["due"])){
+            $err_due="* due balance Required.";
             $hasError=true;
         }
-        elseif(strpos($_POST["email"],"@") && strpos($_POST["email"],".")){
-            if(strpos($_POST["email"],"@") < strpos($_POST["email"],".")){
-                getLawyerByEmail(htmlspecialchars($_POST["email"]));
-                $email=htmlspecialchars($_POST["email"]);
-            }
-            else{
-                $err_email="* '@' Must be before '.'.";
-                $hasError=true;
-            }
-        }
+        
         else{
-            $err_email="* Email must contain '@' and '.'.";
+            $due=$_POST["due"];
+        }
+		
+		//Balance VALIDATION
+        if(empty($_POST["balance"])){
+            $err_balance="* balance Required.";
             $hasError=true;
         }
+        
+        else{
+            $balance=$_POST["balance"];
+        }
+		
+			//Paid  VALIDATION
+        if(empty($_POST["paid"])){
+            $err_paid="* paid Required.";
+            $hasError=true;
+        }
+        
+        else{
+            $paid=$_POST["paid"];
+        }
+		
+		//Due Date VALIDATION
+        if(empty($_POST["due_date"])){
+            $err_due_date="* due date Required.";
+            $hasError=true;
+        }
+        
+        else{
+            $due_date=$_POST["due_date"];
+        }
+		
+		//Payment Date VALIDATION
+        if(empty($_POST["payment_date"])){
+            $err_payment_date="* payment date Required.";
+            $hasError=true;
+        }
+        
+        else{
+            $payment_date=$_POST["payment_date"];
+        }
+		
+		//Payer ID VALIDATION
+        if(empty($_POST["payer_id"])){
+            $err_payer_id="* payer id Required.";
+            $hasError=true;
+        }
+        
+        else{
+            $payer_id=$_POST["payer_id"];
+        }
+		
+		//Receiver ID VALIDATION
+        if(empty($_POST["receiver_id"])){
+            $err_receiver_id="* receiver id Required.";
+            $hasError=true;
+        }
+        
+        else{
+            $receiver_id=$_POST["receiver_id"];
+        }
+		
+		
+		
+		
         //PHONE VALIDATION
         if(empty($_POST["phone"])){
             $err_phone="* Phone Number Required.";
@@ -90,38 +160,9 @@
             $phone=$_POST["phone"];
         }
 		
-		//Account_Number VALIDATION
-		 if(empty($_POST["number"])){
-            $err_phone="* Account Number Required.";
-            $hasError=true;
-        }
+	
+		
        
-        else{
-            $Account_Number=$_POST["number"];
-        }
-		
-		//Amount_No VALIDATION
-		 if(empty($_POST["number"])){
-            $err_phone="* Amount_No Required.";
-            $hasError=true;
-        }
-       
-        else{
-            $Amount_No=$_POST["number"];
-        }
-		
-		
-		
-        
-        
-        //GENDER VALIDATION
-        if(isset($_POST["gender"])){
-            $gender=$_POST["gender"];
-        }
-        else{
-            $err_gender="* Gender Required.";
-            $hasError=true;
-        }
         //ADDRESS VALIDATION
         if(empty($_POST["address"])){
             $err_address="* Address Required.";
@@ -130,30 +171,8 @@
         else{
             $address=htmlspecialchars($_POST["address"]);
         }
-        //CITY VALIDATION
-        if(empty($_POST["city"])){
-            $err_city="* City Required.";
-            $hasError=true;
-        }
-        else{
-            $city=htmlspecialchars($_POST["city"]);
-        }
-        //STATE VALIDATION
-        if(empty($_POST["state"])){
-            $err_state="* State Required.";
-            $hasError=true;
-        }
-        else{
-            $state=htmlspecialchars($_POST["state"]);
-        }
-        //ZIP VALIDATION
-        if(empty($_POST["zip"])){
-            $err_zip="* Zip/Postal Code Required.";
-            $hasError=true;
-        }
-        else{
-            $zip=htmlspecialchars($_POST["zip"]);
-        }
+       
+        
 
         if(!$hasError){
             setcookie($cookie_name, $cookie_value, time()+360, "/");
@@ -169,13 +188,15 @@
                 unset($_COOKIE[$cookie_name]);
                 setcookie($cookie_name, null, -1, '/'); 
                 addLawyer($_GET["pp"], $_GET["fullname"], $_GET["username"], $_GET["email"], $_GET["phone"], $_GET["pass"], $_GET["nid"], $_GET["dob"], $_GET["gender"], $_GET["address"], $_GET["city"], $_GET["state"], $_GET["zip"]);
-                header("Location: lawyer_successfull_signup.php");
+               
             }
             else{
                 header("Location: client_registration.php");
             }
         }
-        
+        else{
+            header("Location: client_registration.php");
+        }
     }
 
     
