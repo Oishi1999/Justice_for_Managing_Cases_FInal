@@ -1,4 +1,7 @@
 <?php
+require_once '..\controllers\client_schedule_controller.php';
+$schedule=scheduleinfo();
+
 
 ?>
 <html>
@@ -20,31 +23,30 @@
 		 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Serial No</th>
-      <th scope="col">Lawyer Name</th>
-      <th scope="col">Metting Time</th>
-      <th scope="col">Hearing time</th>
+      <th scope="col">Serial_No</th>
+      <th scope="col">Lawyer_Name</th>
+      <th scope="col">Metting_Time</th>
+      <th scope="col">Hearing_time</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Jacob</td>
-      <td>11th November,12PM</td>
-      <td>14th November,12PM</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>jhons</td>
-      <td>11th December,12PM</td>
-      <td>12th December,12PM</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Maria</td>
-      <td>11th October,12PM</td>
-	  <td>14th October,12PM</td>
-    </tr>
+    <?php
+       
+      for($i=0 ;$i<count($schedule);$i++){
+        echo "<tr>";
+        echo "<td>".$schedule[$i]["Serial_No"]."</td>";
+        echo "<td>".$schedule[$i]["Lawyer_Name"]."</td>";
+        echo "<td>".$schedule[$i]["Metting_Time"]."</td>";
+        echo "<td>".$schedule[$i]["Hearing_time"]."</td>";
+       
+     echo "<td></td>";
+        //echo '<td><a href="?parem=add&amp;id='.$lawyer[$i]["Serial_No"].'" class="btn btn-primary">Add</td>';
+
+        echo "</tr>";
+
+      }
+
+      ?>
   </tbody>
 </table>
 		 
